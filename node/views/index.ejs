@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/js/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  </body>
+  <script type="text/javascript">
+  function getData () {
+    // fetch('/getData', {
+    //   method: 'GET'
+    // }).then((res) => {
+    //   return res.json
+    // }).then((json) => {
+    //   console.log('json', json)
+    // })
+    $.ajax({
+      type: 'GET',
+      url: '/getData',
+      data: {},
+      dataType: 'json',
+      success: function(json) {
+        console.log(json)
+        // var media = json.mediaType;
+        // var emotion = json.emotion;
+        // var datas = json.datas;
+        // pageSize = json.num;
+        // count = json.count
+        // var mediaHtml = drawFilterHtml (media, 'red-border')
+        // var emotionHtml = drawFilterHtml (emotion, 'blue-border')
+        // $('#mediaType').html(mediaHtml)
+        // $('#emotionType').html(emotionHtml)
+        // drawDataHtml (datas)
+        // showPage(1, pageSize, count)
+      }
+    })
+  }
+  $(function(){
+    getData ()
+    console.log('11')
+  })
+  </script>
+</html>
